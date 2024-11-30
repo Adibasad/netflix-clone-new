@@ -5,12 +5,14 @@ A dynamic and responsive Netflix clone built with React, featuring real-time dat
 
 Website: [Netflix Clone Demo](https://netflix-clone-b04c1-61e38.web.app)
 
+![Screenshot (10)](https://github.com/user-attachments/assets/c4104a7e-c9b3-4f24-92a8-fd1132675626)
 
-![Netflix Clone Screenshot](Screenshot(10).png)
+![Screenshot (11)](https://github.com/user-attachments/assets/23382b21-a5d6-4e03-9aec-12e7a9e7a2a0)
 
-![Netflix Clone Screenshot](Screenshot(11).png)
+![Screenshot (13)](https://github.com/user-attachments/assets/8cbd5d29-a96b-4e2b-beed-f1a232499af0)
 
-![Netflix Clone Screenshot](Screenshot(13).png)
+![Screenshot 2024-11-30 112959](https://github.com/user-attachments/assets/3a20fcaf-fd6b-456b-b0df-3ad20d592b17)
+
 Can play trailer!
 
 
