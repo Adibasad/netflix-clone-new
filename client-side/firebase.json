@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "netflix-clone-b04c1-61e38",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
