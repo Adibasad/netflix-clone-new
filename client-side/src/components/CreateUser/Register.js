@@ -16,46 +16,50 @@ function Dataform() {
   const Submit = (e) => {
     e.preventDefault();
 
-    // Validate if any field is empty
     if (!uname || !email || !password) {
       setErrorMessage("Please fill in all fields.");
-      return; // Prevent form submission if fields are empty
+      return;
     }
 
-    // If all fields are filled, proceed with form submission
     axios
       .post("http://localhost:3001/createUser", { uname, email, password })
       .then((result) => {
         console.log(result);
-        // Clear the error message and navigate to login page (or homepage)
         setErrorMessage("");
-        navigate("/login"); // Redirect to login page after successful registration
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err);
-        setErrorMessage("Error occurred. Please try again."); // Set general error message
+        setErrorMessage("Error occurred. Please try again.");
       });
   };
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        background:
+          "linear-gradient(45.8deg, rgb(175, 104, 254) 9.3%, rgb(101, 223, 255) 75.1%)",
+      }}
+    >
       <div
-        className="mx-auto mt-4 px-4 py-4 rounded-4 align-middle"
+        className="mx-auto px-4 py-4 rounded-4"
         style={{
           width: "50rem",
-          background:
-            "linear-gradient(45.8deg, rgb(175, 104, 254) 9.3%, rgb(101, 223, 255) 75.1%)",
+          background: "#ffffff",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
         }}
       >
         <Form onSubmit={Submit}>
-          <h3 className="text-center mb-4" style={{ color: "#6a1b9a" }}>
-            Registration
-          </h3>
+          <h3 className="text-center mb-4 text-primary">Registration</h3>
           <Form.Group as={Row} className="mb-3" controlId="uname">
-            <Form.Label column sm={3} style={{ color: "#6a1b9a" }}>
+            <Form.Label column sm={4} className="text-secondary">
               Name
             </Form.Label>
-            <Col sm={7}>
+            <Col sm={8}>
               <Form.Control
                 type="text"
                 placeholder="Your Name"
@@ -65,10 +69,10 @@ function Dataform() {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="email">
-            <Form.Label column sm={3} style={{ color: "#6a1b9a" }}>
+            <Form.Label column sm={4} className="text-secondary">
               Email
             </Form.Label>
-            <Col sm={7}>
+            <Col sm={8}>
               <Form.Control
                 type="email"
                 placeholder="Email"
@@ -78,10 +82,10 @@ function Dataform() {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="password">
-            <Form.Label column sm={3} style={{ color: "#6a1b9a" }}>
+            <Form.Label column sm={4} className="text-secondary">
               Enter Password
             </Form.Label>
-            <Col sm={7}>
+            <Col sm={8}>
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -90,25 +94,22 @@ function Dataform() {
               />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} className="mb-3">
-            <Col sm={{ span: 10, offset: 3 }}>
-              <Button type="submit">Create New Account</Button>
-            </Col>
+          <Form.Group className="text-center mb-3">
+            <Button type="submit" variant="primary" className="w-50">
+              Create New Account
+            </Button>
           </Form.Group>
-          &nbsp;
-          <Form.Group as={Row} className="mb-3">
-            <Col sm={{ span: 10, offset: 3 }}>
-              <Link to="/login" className="">
-                Login Instead
-              </Link>
-            </Col>
+          <Form.Group className="text-center">
+            <Link to="/login" className="text-decoration-none text-primary">
+              Login Instead
+            </Link>
           </Form.Group>
           {errorMessage && (
             <p className="text-danger text-center mt-3">{errorMessage}</p>
           )}
         </Form>
       </div>
-    </>
+    </div>
   );
 }
 
